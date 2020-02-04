@@ -21,7 +21,7 @@ javax.el.PropertyNotFoundException: ELResolver cannot handle a null base Object 
 	at com.sun.el.parser.AstValue.getValue(AstValue.java:199)
   ```
   
-  "Good" behaviour:
+"Good" behaviour:
   
   ```
     ElBugExample-ear was successfully deployed in 1,492 milliseconds.|#]
@@ -52,6 +52,8 @@ public class KeycloakSecurityBean {
 }
 ```
 
-When the test fails, we get "ELResolver cannot handle a null base Object with identifier 'myConfigBean'" because the `providerURI = "#{myConfigBean.myvalue}"` expression doesn't work. When the test "passes" we get a "URI is not absolute" because I've just put a dummy value in the URI. I don't know why it works sometimes and fails others. 
+When the test fails, we get "ELResolver cannot handle a null base Object with identifier 'myConfigBean'" because the `providerURI = "#{myConfigBean.myvalue}"` expression doesn't work. 
+
+When the test "passes" we get a "URI is not absolute" because it _successfully_ loaded the dummy value I put in `myConfigBean`.
 
 To get it to pass or fail, try redeploying the application, or restarting the server, or recompiling the application -- I'm really not sure what triggers the failure.
