@@ -1,5 +1,5 @@
 # el-bug-example
-Demonstrates that EL doesn't always work when used in the OpenIdAuthenticationDefinition in an EAR file.
+Demonstrates that EL doesn't always work when used in the OpenIdAuthenticationDefinition in an EAR file. Created for https://github.com/payara/Payara/issues/4469. 
 
 Steps to reproduce:
 
